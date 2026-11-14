@@ -1,15 +1,31 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Foodstuff Market</title>
-</head>
-<body>
-  <h1>Foodstuff Market</h1>
-  <p>Discover, buy and sell food worldwide.</p>
-  <p>Welcome to our global food marketplace!</p>
-  <p>Pi Network integration is coming soon.</p>
-</body>
-</html>
+<!doctype html>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Foodstuff Market π – A közösség piaca</title>
+<style>
+:root{--green:#285b3d;--cream:#fff9ed;--brown:#70452b;--gold:#edb95c}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:#302b24;font-family:system-ui,Arial,sans-serif}header{background:var(--green);color:white;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.logo{font-size:1.45rem;font-weight:800}.pi{display:inline-grid;place-items:center;border:2px solid var(--gold);border-radius:50%;width:38px;height:38px;color:var(--gold);margin-right:8px}nav a{color:white;text-decoration:none;margin-left:16px}main{max-width:1100px;margin:auto;padding:0 20px}.hero{margin:24px 0;padding:65px 30px;text-align:center;border-radius:20px;background:linear-gradient(#0007,#0008),url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1500&q=80') center/cover;color:white}.hero h1{font-size:clamp(2rem,5vw,3.6rem);margin:0 0 12px}.hero p{font-size:1.15rem}.button{display:inline-block;border:0;border-radius:9px;padding:13px 20px;background:var(--gold);color:#252018;font-weight:700;text-decoration:none;cursor:pointer}h2{margin-top:40px}.categories,.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}.tile,.product{border-radius:15px;background:white;box-shadow:0 3px 14px #0001;overflow:hidden}.tile{padding:25px 12px;text-align:center;border:2px solid transparent;cursor:pointer;font:inherit}.tile:hover,.tile.active{border-color:var(--green)}.tile .emoji{font-size:3rem;display:block}.brand{font-size:1.3rem;color:#8b542f;font-weight:900}.product img{width:100%;height:165px;object-fit:cover}.product .info{padding:14px}.price{font-weight:800;color:var(--green)}.note{background:#f6e7c8;padding:18px;border-radius:12px;margin:35px 0}footer{background:#243b2b;color:white;text-align:center;padding:25px;margin-top:40px}#search{padding:13px;border:1px solid #bbb;border-radius:10px;width:100%;max-width:450px;font-size:1rem}.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}@media(max-width:600px){header{justify-content:center}nav a{margin:0 8px}.hero{padding:45px 15px}}
+</style></head><body>
+<header><div class="logo"><span class="pi">π</span>Foodstuff Market</div><nav><a href="#kategoriak">Kategóriák</a><a href="#termekek">Piac</a><a href="#rolunk">Rólunk</a></nav></header>
+<main><section class="hero"><h1>A közösség piaca, határok nélkül</h1><p>Helyi termelők, házi finomságok és valódi emberek. Egy piactér, amely a kicsiktől indul.</p><a class="button" href="#kategoriak">Fedezd fel a piacot</a></section>
+<section id="kategoriak"><h2>Válogass a piaci standok között</h2><div class="categories">
+<button class="tile" data-category="Pékáru"><span class="emoji">🥖</span><span class="brand">π</span> Pékáru</button>
+<button class="tile" data-category="Hús"><span class="emoji">🥩</span><span class="brand">π</span> Hús</button>
+<button class="tile" data-category="Hal"><span class="emoji">🐟</span><span class="brand">π</span> Hal</button>
+<button class="tile" data-category="Tejtermék"><span class="emoji">🧀</span><span class="brand">π</span> Tejtermék</button>
+<button class="tile" data-category="Zöldség"><span class="emoji">🥕</span><span class="brand">π</span> Zöldség</button>
+<button class="tile" data-category="Gyümölcs"><span class="emoji">🍎</span><span class="brand">π</span> Gyümölcs</button>
+</div></section>
+<section id="termekek"><h2>Ízelítő a piac kínálatából</h2><div class="toolbar"><input id="search" type="search" placeholder="Keress a termékek között…" aria-label="Termékkeresés"><button class="button" id="reset">Összes termék</button></div><div class="products" id="products"></div><p id="empty" hidden>Nincs találat.</p></section>
+<section class="note" id="rolunk"><h2>Piac emberektől, embereknek</h2><p>A Foodstuff Market célja, hogy a helyi eladókat és vásárlókat összekösse. A nemzetközi beszállítás és a Pi Network-fizetés későbbi fejlesztési cél.</p><strong>Bemutatóoldal:</strong> a termékek és Pi-árak szemléltető példák. Regisztráció, hirdetésfeladás, rendelés és fizetés még nem működik.</section></main>
+<footer>© 2026 Foodstuff Market π · A közösség piaca</footer>
+<script>
+const items=[
+{name:"Friss házi kenyér",category:"Pékáru",price:"2 π",photo:"photo-1509440159596-0249088772ff"},
+{name:"Marhahús",category:"Hús",price:"18 π",photo:"photo-1607623814075-e51df1bdc82f"},
+{name:"Friss hal",category:"Hal",price:"12 π",photo:"photo-1510130387422-82bed34b37e9"},
+{name:"Házi sajt",category:"Tejtermék",price:"5 π",photo:"photo-1486297678162-eb2a19b0a32d"},
+{name:"Friss sárgarépa",category:"Zöldség",price:"3 π",photo:"photo-1445282768818-728615cc910a"},
+{name:"Termelői alma",category:"Gyümölcs",price:"4 π",photo:"photo-1560806887-1e4cd0b6cbd6"}];
+let category="";const box=document.getElementById("products"),search=document.getElementById("search");
+function render(){const q=search.value.toLocaleLowerCase("hu");const selected=items.filter(x=>(!category||x.category===category)&&x.name.toLocaleLowerCase("hu").includes(q));box.innerHTML=selected.map(x=>`<article class="product"><img src="https://images.unsplash.com/${x.photo}?auto=format&fit=crop&w=600&q=75" alt="${x.name}" loading="lazy"><div class="info"><strong>${x.name}</strong><p>${x.category} · Bemutató termék</p><span class="price">${x.price} (példaár)</span></div></article>`).join("");document.getElementById("empty").hidden=selected.length>0;document.querySelectorAll(".tile").forEach(b=>b.classList.toggle("active",b.dataset.category===category))}
+document.querySelectorAll(".tile").forEach(b=>b.addEventListener("click",()=>{category=category===b.dataset.category?"":b.dataset.category;render();document.getElementById("termekek").scrollIntoView({behavior:"smooth"})}));search.addEventListener("input",render);document.getElementById("reset").addEventListener("click",()=>{category="";search.value="";render()});render();
+</script></body></html>
