@@ -1,31 +1,289 @@
-<!doctype html>
-<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Foodstuff Market π – A közösség piaca</title>
+HTML
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Foodstuff Market</title>
 <style>
-:root{--green:#285b3d;--cream:#fff9ed;--brown:#70452b;--gold:#edb95c}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:#302b24;font-family:system-ui,Arial,sans-serif}header{background:var(--green);color:white;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.logo{font-size:1.45rem;font-weight:800}.pi{display:inline-grid;place-items:center;border:2px solid var(--gold);border-radius:50%;width:38px;height:38px;color:var(--gold);margin-right:8px}nav a{color:white;text-decoration:none;margin-left:16px}main{max-width:1100px;margin:auto;padding:0 20px}.hero{margin:24px 0;padding:65px 30px;text-align:center;border-radius:20px;background:linear-gradient(#0007,#0008),url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1500&q=80') center/cover;color:white}.hero h1{font-size:clamp(2rem,5vw,3.6rem);margin:0 0 12px}.hero p{font-size:1.15rem}.button{display:inline-block;border:0;border-radius:9px;padding:13px 20px;background:var(--gold);color:#252018;font-weight:700;text-decoration:none;cursor:pointer}h2{margin-top:40px}.categories,.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}.tile,.product{border-radius:15px;background:white;box-shadow:0 3px 14px #0001;overflow:hidden}.tile{padding:25px 12px;text-align:center;border:2px solid transparent;cursor:pointer;font:inherit}.tile:hover,.tile.active{border-color:var(--green)}.tile .emoji{font-size:3rem;display:block}.brand{font-size:1.3rem;color:#8b542f;font-weight:900}.product img{width:100%;height:165px;object-fit:cover}.product .info{padding:14px}.price{font-weight:800;color:var(--green)}.note{background:#f6e7c8;padding:18px;border-radius:12px;margin:35px 0}footer{background:#243b2b;color:white;text-align:center;padding:25px;margin-top:40px}#search{padding:13px;border:1px solid #bbb;border-radius:10px;width:100%;max-width:450px;font-size:1rem}.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}@media(max-width:600px){header{justify-content:center}nav a{margin:0 8px}.hero{padding:45px 15px}}
-</style></head><body>
-<header><div class="logo"><span class="pi">π</span>Foodstuff Market</div><nav><a href="#kategoriak">Kategóriák</a><a href="#termekek">Piac</a><a href="#rolunk">Rólunk</a></nav></header>
-<main><section class="hero"><h1>A közösség piaca, határok nélkül</h1><p>Helyi termelők, házi finomságok és valódi emberek. Egy piactér, amely a kicsiktől indul.</p><a class="button" href="#kategoriak">Fedezd fel a piacot</a></section>
-<section id="kategoriak"><h2>Válogass a piaci standok között</h2><div class="categories">
-<button class="tile" data-category="Pékáru"><span class="emoji">🥖</span><span class="brand">π</span> Pékáru</button>
-<button class="tile" data-category="Hús"><span class="emoji">🥩</span><span class="brand">π</span> Hús</button>
-<button class="tile" data-category="Hal"><span class="emoji">🐟</span><span class="brand">π</span> Hal</button>
-<button class="tile" data-category="Tejtermék"><span class="emoji">🧀</span><span class="brand">π</span> Tejtermék</button>
-<button class="tile" data-category="Zöldség"><span class="emoji">🥕</span><span class="brand">π</span> Zöldség</button>
-<button class="tile" data-category="Gyümölcs"><span class="emoji">🍎</span><span class="brand">π</span> Gyümölcs</button>
-</div></section>
-<section id="termekek"><h2>Ízelítő a piac kínálatából</h2><div class="toolbar"><input id="search" type="search" placeholder="Keress a termékek között…" aria-label="Termékkeresés"><button class="button" id="reset">Összes termék</button></div><div class="products" id="products"></div><p id="empty" hidden>Nincs találat.</p></section>
-<section class="note" id="rolunk"><h2>Piac emberektől, embereknek</h2><p>A Foodstuff Market célja, hogy a helyi eladókat és vásárlókat összekösse. A nemzetközi beszállítás és a Pi Network-fizetés későbbi fejlesztési cél.</p><strong>Bemutatóoldal:</strong> a termékek és Pi-árak szemléltető példák. Regisztráció, hirdetésfeladás, rendelés és fizetés még nem működik.</section></main>
-<footer>© 2026 Foodstuff Market π · A közösség piaca</footer>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f7f1;color:#183d2b;font-family:Arial,sans-serif}
+header{background:linear-gradient(120deg,#145b3b,#31a66c);color:white;text-align:center;padding:25px}
+h1{margin:0}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:15px}
+button{background:#167447;color:white;border:0;border-radius:9px;padding:12px;cursor:pointer}
+nav button{background:#ffffff30}
+main{max-width:1000px;margin:auto;padding:15px}
+.panel{background:white;border-radius:14px;padding:18px;margin:15px 0}
+.notice{background:#fff0bf;padding:15px;border-radius:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.card{border:1px solid #ddd;border-radius:12px;padding:15px}
+input,select{width:100%;padding:10px;margin:8px 0}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header>
+<h1>🥬 Foodstuff Market</h1>
+<p>Közösségi élelmiszer-piactér</p>
+<nav>
+<button onclick="show('market')">Piactér</button>
+<button onclick="show('sell')">Eladás</button>
+<button onclick="show('profile')">Profil</button>
+</nav>
+</header>
+<main>
+<div class="notice">
+<strong>TESZTÜZEM</strong> – A Test-Pi virtuális próbaegyenleg.
+Nem valódi PI, nem Pi Testnet-token, nincs pénzbeli értéke.
+Valódi fizetés és termékátadás nem történik.
+</div>
+
+<section class="panel">
+<h2 id="welcome">Üdvözlünk a piactéren!</h2>
+<h3 id="balance">Egyenleg: —</h3>
+<p>Regisztrációs ajándék: 200 virtuális Test-Pi</p>
+</section>
+
+<section id="market" class="panel">
+<h2>Élelmiszerek</h2>
+<input id="search" placeholder="Termék keresése..." oninput="render()">
+<div id="products" class="grid"></div>
+</section>
+
+<section id="profile" class="panel hidden">
+<h2>Felhasználói profil</h2>
+<div id="registration">
+<input id="username" placeholder="Felhasználónév">
+<button onclick="login()">Tesztprofil létrehozása / belépés</button>
+</div>
+<div id="account" class="hidden">
+<p id="accountName"></p>
+<p id="accountBalance"></p>
+<p>Valódi PI / Pi Wallet – Coming Soon</p>
+<button onclick="logout()">Kilépés</button>
+</div>
+<p><small>Ez még helyi demó, nem biztonságos online regisztráció.</small></p>
+</section>
+
+<section id="sell" class="panel hidden">
+<h2>Új próbahirdetés</h2>
+<input id="productName" placeholder="Termék neve, például kárász">
+<select id="category">
+<option>Halak</option>
+<option>Húsok</option>
+<option>Zöldségek</option>
+<option>Gyümölcsök</option>
+<option>Tojás</option>
+<option>Tejtermékek</option>
+<option>Diófélék</option>
+<option>Méz</option>
+<option>Pékáru</option>
+<option>Egyéb</option>
+</select>
+<input id="price" type="number" min="0.01" step="0.01" placeholder="Ár Test-Pi-ben">
+<input id="quantity" placeholder="Mennyiség, például 1 kg">
+<button onclick="publish()">Próbahirdetés feladása</button>
+</section>
+
+<section id="orders" class="panel hidden">
+<h2>Tranzakciók</h2>
+<div id="history"></div>
+</section>
+</main>
+
 <script>
-const items=[
-{name:"Friss házi kenyér",category:"Pékáru",price:"2 π",photo:"photo-1509440159596-0249088772ff"},
-{name:"Marhahús",category:"Hús",price:"18 π",photo:"photo-1607623814075-e51df1bdc82f"},
-{name:"Friss hal",category:"Hal",price:"12 π",photo:"photo-1510130387422-82bed34b37e9"},
-{name:"Házi sajt",category:"Tejtermék",price:"5 π",photo:"photo-1486297678162-eb2a19b0a32d"},
-{name:"Friss sárgarépa",category:"Zöldség",price:"3 π",photo:"photo-1445282768818-728615cc910a"},
-{name:"Termelői alma",category:"Gyümölcs",price:"4 π",photo:"photo-1560806887-1e4cd0b6cbd6"}];
-let category="";const box=document.getElementById("products"),search=document.getElementById("search");
-function render(){const q=search.value.toLocaleLowerCase("hu");const selected=items.filter(x=>(!category||x.category===category)&&x.name.toLocaleLowerCase("hu").includes(q));box.innerHTML=selected.map(x=>`<article class="product"><img src="https://images.unsplash.com/${x.photo}?auto=format&fit=crop&w=600&q=75" alt="${x.name}" loading="lazy"><div class="info"><strong>${x.name}</strong><p>${x.category} · Bemutató termék</p><span class="price">${x.price} (példaár)</span></div></article>`).join("");document.getElementById("empty").hidden=selected.length>0;document.querySelectorAll(".tile").forEach(b=>b.classList.toggle("active",b.dataset.category===category))}
-document.querySelectorAll(".tile").forEach(b=>b.addEventListener("click",()=>{category=category===b.dataset.category?"":b.dataset.category;render();document.getElementById("termekek").scrollIntoView({behavior:"smooth"})}));search.addEventListener("input",render);document.getElementById("reset").addEventListener("click",()=>{category="";search.value="";render()});render();
-</script></body></html>
+const KEY="foodstuff-demo-v1";
+let data;
+try {
+ data=JSON.parse(localStorage.getItem(KEY));
+} catch(e) {}
+
+if(!data || !data.users || !data.products){
+ data={users:{},products:[],orders:[]};
+}
+
+let current=sessionStorage.getItem("foodstuff-user")||"";
+
+const examples=[
+ ["Ponty","Halak",8,"1 kg"],
+ ["Kárász","Halak",5,"1 kg"],
+ ["Csirkehús","Húsok",9,"1 kg"],
+ ["Alma","Gyümölcsök",3,"1 kg"],
+ ["Sárgarépa","Zöldségek",2,"1 kg"],
+ ["Dió","Diófélék",6,"0,5 kg"],
+ ["Tojás","Tojás",4,"10 db"],
+ ["Akácméz","Méz",9,"1 üveg"]
+];
+
+if(!data.products.length){
+ data.products=examples.map((x,i)=>({
+ id:i+1,name:x[0],category:x[1],
+ price:x[2],quantity:x[3],
+ seller:"Bemutató",sold:false
+ }));
+ save();
+}
+
+function save(){
+ localStorage.setItem(KEY,JSON.stringify(data));
+}
+
+function show(id){
+ document.querySelectorAll("main section").forEach(s=>{
+ s.classList.toggle("hidden",s.id!==id);
+ });
+ update();
+}
+
+function login(){
+ const name=document.getElementById("username").value.trim();
+ if(!name){
+  alert("Adj meg egy felhasználónevet!");
+  return;
+ }
+ if(!data.users[name]){
+  data.users[name]={balance:200};
+ }
+ current=name;
+ sessionStorage.setItem("foodstuff-user",name);
+ save();
+ update();
+ show("market");
+}
+
+function logout(){
+ current="";
+ sessionStorage.removeItem("foodstuff-user");
+ update();
+}
+
+function update(){
+ const user=data.users[current];
+ document.getElementById("welcome").textContent=
+ user?"Üdvözlünk, "+current+"!":"Üdvözlünk a piactéren!";
+ document.getElementById("balance").textContent=
+ user?"Egyenleg: "+user.balance.toFixed(2)+" Test-Pi":"Egyenleg: —";
+ document.getElementById("registration").classList.toggle("hidden",!!user);
+ document.getElementById("account").classList.toggle("hidden",!user);
+ if(user){
+  document.getElementById("accountName").textContent=current;
+  document.getElementById("accountBalance").textContent=
+  user.balance.toFixed(2)+" Test-Pi";
+ }
+ render();
+ history();
+}
+
+function render(){
+ const box=document.getElementById("products");
+ const search=document.getElementById("search").value.toLowerCase();
+ box.innerHTML="";
+ const items=data.products.filter(p=>
+  !p.sold && p.name.toLowerCase().includes(search)
+ );
+ if(!items.length){
+  box.textContent="Nincs találat.";
+  return;
+ }
+ items.forEach(p=>{
+  const card=document.createElement("div");
+  card.className="card";
+  const title=document.createElement("h3");
+  title.textContent=p.name;
+  const details=document.createElement("p");
+  details.textContent=p.category+" • "+p.quantity;
+  const price=document.createElement("p");
+  price.textContent=p.price+" Test-Pi";
+  const seller=document.createElement("small");
+  seller.textContent="Eladó: "+p.seller;
+  const btn=document.createElement("button");
+  btn.textContent=p.seller===current?"Saját hirdetés":"Próbavásárlás";
+  btn.disabled=p.seller===current;
+  btn.onclick=()=>buy(p.id);
+  card.append(title,details,price,seller,document.createElement("br"),btn);
+  box.appendChild(card);
+ });
+}
+
+function publish(){
+ if(!data.users[current]){
+  alert("Előbb hozz létre tesztprofilt!");
+  show("profile");
+  return;
+ }
+ const name=document.getElementById("productName").value.trim();
+ const category=document.getElementById("category").value;
+ const price=Number(document.getElementById("price").value);
+ const quantity=document.getElementById("quantity").value.trim();
+ if(!name || !quantity || !Number.isFinite(price) || price<=0){
+  alert("Tölts ki minden mezőt helyesen!");
+  return;
+ }
+ data.products.push({
+  id:Date.now()+Math.random(),
+  name,category,price,quantity,
+  seller:current,sold:false
+ });
+ save();
+ document.getElementById("productName").value="";
+ document.getElementById("price").value="";
+ document.getElementById("quantity").value="";
+ show("market");
+ alert("Próbahirdetés létrehozva!");
+}
+
+function buy(id){
+ if(!data.users[current]){
+  alert("Előbb jelentkezz be!");
+  show("profile");
+  return;
+ }
+ const p=data.products.find(x=>x.id===id);
+ if(!p || p.sold || p.seller===current)return;
+ const buyer=data.users[current];
+ if(buyer.balance<p.price){
+  alert("Nincs elég virtuális Test-Pi!");
+  return;
+ }
+ if(!confirm("Szimulált vásárlás: "+p.name+" – "+p.price+" Test-Pi?"))return;
+ buyer.balance=Math.round((buyer.balance-p.price)*100)/100;
+ if(data.users[p.seller]){
+  data.users[p.seller].balance=
+  Math.round((data.users[p.seller].balance+p.price)*100)/100;
+ }
+ p.sold=true;
+ data.orders.push({
+  buyer:current,seller:p.seller,
+  name:p.name,price:p.price,
+  date:new Date().toLocaleString("hu-HU")
+ });
+ save();
+ update();
+ alert("Próbavásárlás sikeres! Valódi fizetés nem történt.");
+}
+
+function history(){
+ const box=document.getElementById("history");
+ box.innerHTML="";
+ const orders=data.orders.filter(o=>
+  o.buyer===current || o.seller===current
+ );
+ if(!orders.length){
+  box.textContent="Még nincs próbatranzakció.";
+  return;
+ }
+ orders.forEach(o=>{
+  const p=document.createElement("p");
+  p.textContent=o.date+" – "+o.name+" – "+
+  o.price+" Test-Pi – "+
+  (o.buyer===current?"Vásárlás":"Eladás");
+  box.appendChild(p);
+ });
+}
+
+update();
+</script>
+</body>
+</html>
